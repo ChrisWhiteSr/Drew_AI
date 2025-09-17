@@ -1,0 +1,626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--[if IE 6]><html class="ie6" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 7]><html class="lt-ie8 lt-ie9" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml"><!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=1" />
+  <meta name="referrer" content="origin" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>dmarket api documentation at DuckDuckGo</title>
+  <link title="DuckDuckGo (HTML)" type="application/opensearchdescription+xml" rel="search" href="//duckduckgo.com/opensearch_html_v2.xml" />
+  <link href="//duckduckgo.com/favicon.ico" rel="shortcut icon" />
+  <link rel="icon" href="//duckduckgo.com/favicon.ico" type="image/x-icon" />
+  <link id="icon60" rel="apple-touch-icon" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_60x60.png?v=2"/>
+  <link id="icon76" rel="apple-touch-icon" sizes="76x76" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_76x76.png?v=2"/>
+  <link id="icon120" rel="apple-touch-icon" sizes="120x120" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_120x120.png?v=2"/>
+  <link id="icon152" rel="apple-touch-icon" sizes="152x152" href="//duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png?v=2"/>
+  <link rel="image_src" href="//duckduckgo.com/assets/icons/meta/DDG-icon_256x256.png">
+  <link rel="stylesheet" media="handheld, all" href="//duckduckgo.com/dist/h.5cdd129b369a4236564b.css" type="text/css"/>
+</head>
+
+<body class="body--html">
+  <a name="top" id="top"></a>
+
+  <form action="/html/" method="post">
+    <input type="text" name="state_hidden" id="state_hidden" />
+  </form>
+
+  <div>
+    <div class="site-wrapper-border"></div>
+
+    <div id="header" class="header cw header--html">
+      <a title="DuckDuckGo" href="/html/" class="header__logo-wrap"></a>
+
+      <form name="x" class="header__form" action="/html/" method="post">
+        <div class="search search--header">
+          <input name="q" autocomplete="off" class="search__input" id="search_form_input_homepage" type="text" value="dmarket api documentation" />
+          <input name="b" id="search_button_homepage" class="search__button search__button--html" value="" title="Search" alt="Search" type="submit" />
+        </div>
+
+        
+        
+        
+        
+
+        <div class="frm__select">
+          <select name="kl">
+            
+              <option value="" >All Regions</option>
+            
+              <option value="ar-es" >Argentina</option>
+            
+              <option value="au-en" >Australia</option>
+            
+              <option value="at-de" >Austria</option>
+            
+              <option value="be-fr" >Belgium (fr)</option>
+            
+              <option value="be-nl" >Belgium (nl)</option>
+            
+              <option value="br-pt" >Brazil</option>
+            
+              <option value="bg-bg" >Bulgaria</option>
+            
+              <option value="ca-en" >Canada (en)</option>
+            
+              <option value="ca-fr" >Canada (fr)</option>
+            
+              <option value="ct-ca" >Catalonia</option>
+            
+              <option value="cl-es" >Chile</option>
+            
+              <option value="cn-zh" >China</option>
+            
+              <option value="co-es" >Colombia</option>
+            
+              <option value="hr-hr" >Croatia</option>
+            
+              <option value="cz-cs" >Czech Republic</option>
+            
+              <option value="dk-da" >Denmark</option>
+            
+              <option value="ee-et" >Estonia</option>
+            
+              <option value="fi-fi" >Finland</option>
+            
+              <option value="fr-fr" >France</option>
+            
+              <option value="de-de" >Germany</option>
+            
+              <option value="gr-el" >Greece</option>
+            
+              <option value="hk-tzh" >Hong Kong</option>
+            
+              <option value="hu-hu" >Hungary</option>
+            
+              <option value="is-is" >Iceland</option>
+            
+              <option value="in-en" >India (en)</option>
+            
+              <option value="id-en" >Indonesia (en)</option>
+            
+              <option value="ie-en" >Ireland</option>
+            
+              <option value="il-en" >Israel (en)</option>
+            
+              <option value="it-it" >Italy</option>
+            
+              <option value="jp-jp" >Japan</option>
+            
+              <option value="kr-kr" >Korea</option>
+            
+              <option value="lv-lv" >Latvia</option>
+            
+              <option value="lt-lt" >Lithuania</option>
+            
+              <option value="my-en" >Malaysia (en)</option>
+            
+              <option value="mx-es" >Mexico</option>
+            
+              <option value="nl-nl" >Netherlands</option>
+            
+              <option value="nz-en" >New Zealand</option>
+            
+              <option value="no-no" >Norway</option>
+            
+              <option value="pk-en" >Pakistan (en)</option>
+            
+              <option value="pe-es" >Peru</option>
+            
+              <option value="ph-en" >Philippines (en)</option>
+            
+              <option value="pl-pl" >Poland</option>
+            
+              <option value="pt-pt" >Portugal</option>
+            
+              <option value="ro-ro" >Romania</option>
+            
+              <option value="ru-ru" >Russia</option>
+            
+              <option value="xa-ar" >Saudi Arabia</option>
+            
+              <option value="sg-en" >Singapore</option>
+            
+              <option value="sk-sk" >Slovakia</option>
+            
+              <option value="sl-sl" >Slovenia</option>
+            
+              <option value="za-en" >South Africa</option>
+            
+              <option value="es-ca" >Spain (ca)</option>
+            
+              <option value="es-es" >Spain (es)</option>
+            
+              <option value="se-sv" >Sweden</option>
+            
+              <option value="ch-de" >Switzerland (de)</option>
+            
+              <option value="ch-fr" >Switzerland (fr)</option>
+            
+              <option value="tw-tzh" >Taiwan</option>
+            
+              <option value="th-en" >Thailand (en)</option>
+            
+              <option value="tr-tr" >Turkey</option>
+            
+              <option value="us-en" >US (English)</option>
+            
+              <option value="us-es" >US (Spanish)</option>
+            
+              <option value="ua-uk" >Ukraine</option>
+            
+              <option value="uk-en" >United Kingdom</option>
+            
+              <option value="vn-en" >Vietnam (en)</option>
+            
+          </select>
+        </div>
+
+        <div class="frm__select frm__select--last">
+          <select class="" name="df">
+            
+              <option value="" selected>Any Time</option>
+            
+              <option value="d" >Past Day</option>
+            
+              <option value="w" >Past Week</option>
+            
+              <option value="m" >Past Month</option>
+            
+              <option value="y" >Past Year</option>
+            
+          </select>
+        </div>
+      </form>
+    </div>
+
+    
+
+    
+      <!-- Web results are present -->
+      <div>
+        <div class="serp__results">
+          <div id="links" class="results">
+            
+
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdocs.dmarket.com%2Fv1%2Fswagger.html&amp;rut=420832aec37269d90aee5024b13a01d3d00cb06278e0fc490d8cc355e2aa9a26">DMarket trading API</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdocs.dmarket.com%2Fv1%2Fswagger.html&amp;rut=420832aec37269d90aee5024b13a01d3d00cb06278e0fc490d8cc355e2aa9a26">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/docs.dmarket.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdocs.dmarket.com%2Fv1%2Fswagger.html&amp;rut=420832aec37269d90aee5024b13a01d3d00cb06278e0fc490d8cc355e2aa9a26">
+                            docs.dmarket.com/v1/swagger.html
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdocs.dmarket.com%2Fv1%2Fswagger.html&amp;rut=420832aec37269d90aee5024b13a01d3d00cb06278e0fc490d8cc355e2aa9a26">Welcome to the <b>DMarket</b> Trading <b>API</b> section. Our JSON-based <b>API</b> enables you to manage your <b>DMarket</b> inventory through the methods featured below. In order to use the <b>API</b>, please generate your personal <b>API</b> keys in the account settings. Request signature instructions A valid HTTP request to the trading <b>API</b> must include 3 request headers: X-<b>Api</b>-Key: public key (must be a hex string in lowercase) To ...</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket%2Fdmarket%2Ddoc&amp;rut=f5dac5fff5294ec7dc48dd13adb1ef96a7a12b4ee3f660d97dad1516a6d777d5">GitHub - dmarket/dmarket-doc</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket%2Fdmarket%2Ddoc&amp;rut=f5dac5fff5294ec7dc48dd13adb1ef96a7a12b4ee3f660d97dad1516a6d777d5">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/github.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket%2Fdmarket%2Ddoc&amp;rut=f5dac5fff5294ec7dc48dd13adb1ef96a7a12b4ee3f660d97dad1516a6d777d5">
+                            github.com/dmarket/dmarket-doc
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket%2Fdmarket%2Ddoc&amp;rut=f5dac5fff5294ec7dc48dd13adb1ef96a7a12b4ee3f660d97dad1516a6d777d5">Contribute to <b>dmarket</b>/<b>dmarket</b>-doc development by creating an account on GitHub.</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.postman.com%2Fbold%2Dfirefly%2D974979%2Fdmarket%2Dpublic%2Dapi%2Foverview&amp;rut=77f0144dc299dacf247065dc39683add1563568a871487b6b4badffa01933adb">DMarket Public API | Postman API Network</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.postman.com%2Fbold%2Dfirefly%2D974979%2Fdmarket%2Dpublic%2Dapi%2Foverview&amp;rut=77f0144dc299dacf247065dc39683add1563568a871487b6b4badffa01933adb">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/www.postman.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.postman.com%2Fbold%2Dfirefly%2D974979%2Fdmarket%2Dpublic%2Dapi%2Foverview&amp;rut=77f0144dc299dacf247065dc39683add1563568a871487b6b4badffa01933adb">
+                            www.postman.com/bold-firefly-974979/dmarket-public-api/overview
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.postman.com%2Fbold%2Dfirefly%2D974979%2Fdmarket%2Dpublic%2Dapi%2Foverview&amp;rut=77f0144dc299dacf247065dc39683add1563568a871487b6b4badffa01933adb"><b>DMarket</b> Public <b>API</b> on the Postman <b>API</b> Network: This public workspace features ready-to-use <b>APIs</b>, Collections, and more from bold-firefly-974979.</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsupport.dmarket.com%2Fhc%2Fen%2Dus%2Farticles%2F25266618997137%2DWhere%2Dto%2Dfind%2Dthe%2DTrading%2DAPI%2Ddocumentation&amp;rut=fd10d437c99419f701d2579898ed1ef2817f0ba6dd4c6cc81874242003475b7b">Where to find the Trading API documentation - DMarket</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsupport.dmarket.com%2Fhc%2Fen%2Dus%2Farticles%2F25266618997137%2DWhere%2Dto%2Dfind%2Dthe%2DTrading%2DAPI%2Ddocumentation&amp;rut=fd10d437c99419f701d2579898ed1ef2817f0ba6dd4c6cc81874242003475b7b">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/support.dmarket.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsupport.dmarket.com%2Fhc%2Fen%2Dus%2Farticles%2F25266618997137%2DWhere%2Dto%2Dfind%2Dthe%2DTrading%2DAPI%2Ddocumentation&amp;rut=fd10d437c99419f701d2579898ed1ef2817f0ba6dd4c6cc81874242003475b7b">
+                            support.dmarket.com/hc/en-us/articles/25266618997137-Where-to-find-the-Trading-API-documentation
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsupport.dmarket.com%2Fhc%2Fen%2Dus%2Farticles%2F25266618997137%2DWhere%2Dto%2Dfind%2Dthe%2DTrading%2DAPI%2Ddocumentation&amp;rut=fd10d437c99419f701d2579898ed1ef2817f0ba6dd4c6cc81874242003475b7b">Trading <b>API</b> <b>documentation</b> is available on the Trading <b>API</b> page. Simply click the &quot;Learn more&quot; link that will redirect you to the <b>documentation</b>.</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket%2Fdm%2Dtrading%2Dtools&amp;rut=fee2275ab978fec699c7da2780660af6949c769df8165bc310a93fe6f9fe0e21">GitHub - dmarket/dm-trading-tools: This repository shows the examples ...</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket%2Fdm%2Dtrading%2Dtools&amp;rut=fee2275ab978fec699c7da2780660af6949c769df8165bc310a93fe6f9fe0e21">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/github.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket%2Fdm%2Dtrading%2Dtools&amp;rut=fee2275ab978fec699c7da2780660af6949c769df8165bc310a93fe6f9fe0e21">
+                            github.com/dmarket/dm-trading-tools
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket%2Fdm%2Dtrading%2Dtools&amp;rut=fee2275ab978fec699c7da2780660af6949c769df8165bc310a93fe6f9fe0e21">This repository shows the examples of clients for <b>DMarket</b> trading <b>API</b> usage - <b>dmarket</b>/dm-trading-tools</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FD_Market%2Fcomments%2F12xixzn%2Fhelp_dmarket_api_endpoint_exchangev1withdrawassets%2F&amp;rut=ef809631982bd98c0a0482a08675aa9a1b56635cdfe54584210cee01c4d4a8ed">[HELP] Dmarket API endpoint /exchange/v1/withdraw-assets : r/D ... - Reddit</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FD_Market%2Fcomments%2F12xixzn%2Fhelp_dmarket_api_endpoint_exchangev1withdrawassets%2F&amp;rut=ef809631982bd98c0a0482a08675aa9a1b56635cdfe54584210cee01c4d4a8ed">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/www.reddit.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FD_Market%2Fcomments%2F12xixzn%2Fhelp_dmarket_api_endpoint_exchangev1withdrawassets%2F&amp;rut=ef809631982bd98c0a0482a08675aa9a1b56635cdfe54584210cee01c4d4a8ed">
+                            www.reddit.com/r/D_Market/comments/12xixzn/help_dmarket_api_endpoint_exchangev1withdrawassets/
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.reddit.com%2Fr%2FD_Market%2Fcomments%2F12xixzn%2Fhelp_dmarket_api_endpoint_exchangev1withdrawassets%2F&amp;rut=ef809631982bd98c0a0482a08675aa9a1b56635cdfe54584210cee01c4d4a8ed"><b>DMarket</b> is an NFT and virtual in-game items marketplace. It enables secure buying, selling, and trading of in-game and NFT items. We unveil the digital metaverse of collectible NFT memorabilia for eSports fans and gamers all around the world. With <b>DMarket&#x27;s</b> unique (patent pending) technology of NFT stream drops, we let viewers get NFT items live while watching streams. Those items can be ...</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdmarket.com%2Fblog%2Fdmarket%2Dapi%2Dfor%2Dautomated%2Dtrading%2F&amp;rut=189ae16cd1c0770616af93db9c4636d08e6e3eb09efd9d2cabe8b666193b0fd4">DMarket API for Automated Trading | DMarket | Blog</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdmarket.com%2Fblog%2Fdmarket%2Dapi%2Dfor%2Dautomated%2Dtrading%2F&amp;rut=189ae16cd1c0770616af93db9c4636d08e6e3eb09efd9d2cabe8b666193b0fd4">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/dmarket.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdmarket.com%2Fblog%2Fdmarket%2Dapi%2Dfor%2Dautomated%2Dtrading%2F&amp;rut=189ae16cd1c0770616af93db9c4636d08e6e3eb09efd9d2cabe8b666193b0fd4">
+                            dmarket.com/blog/dmarket-api-for-automated-trading/
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdmarket.com%2Fblog%2Fdmarket%2Dapi%2Dfor%2Dautomated%2Dtrading%2F&amp;rut=189ae16cd1c0770616af93db9c4636d08e6e3eb09efd9d2cabe8b666193b0fd4">Advanced Targets <b>DMarket</b> <b>API</b> becomes even handier, and we are happy to inform you about the massive update of Target&#x27;s functionality - the Advanced Targets! Now even more precision targets available, such as phase, pattern, and float parameters. The <b>API</b> <b>documentation</b> for these advanced parameters can be found here.</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket&amp;rut=01c8d40c742c91464ba77914f3235d72bde685e1f7e39ab668706d604ee5c50f">DMarket - GitHub</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket&amp;rut=01c8d40c742c91464ba77914f3235d72bde685e1f7e39ab668706d604ee5c50f">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/github.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket&amp;rut=01c8d40c742c91464ba77914f3235d72bde685e1f7e39ab668706d604ee5c50f">
+                            github.com/dmarket
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fgithub.com%2Fdmarket&amp;rut=01c8d40c742c91464ba77914f3235d72bde685e1f7e39ab668706d604ee5c50f"><b>DMarket</b> is an NFT and in-game items platform that unlocks the multi-billion-dollar digital asset economy for game developers, players, esports clubs, brands, streamers and fans everywhere.</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdocs.dmarket.com%2Fv1%2Ftrading.swagger.json&amp;rut=fdad2567157df9b75fe992b549d96c53d767e876e7f560cc9685dee536cb0641">DMarket</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdocs.dmarket.com%2Fv1%2Ftrading.swagger.json&amp;rut=fdad2567157df9b75fe992b549d96c53d767e876e7f560cc9685dee536cb0641">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/docs.dmarket.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdocs.dmarket.com%2Fv1%2Ftrading.swagger.json&amp;rut=fdad2567157df9b75fe992b549d96c53d767e876e7f560cc9685dee536cb0641">
+                            docs.dmarket.com/v1/trading.swagger.json
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fdocs.dmarket.com%2Fv1%2Ftrading.swagger.json&amp;rut=fdad2567157df9b75fe992b549d96c53d767e876e7f560cc9685dee536cb0641">As the result of the operation: the offer is removed, the items are transferred to the buyer, the purchase amount is transferred to the seller, the fee is transferred to <b>DMarket</b>.</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+              
+                <div class="result results_links results_links_deep web-result ">
+                  <div class="links_main links_deep result__body"> <!-- This is the visible part -->
+                    
+                      <h2 class="result__title">
+                        <a rel="nofollow" class="result__a" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsupport.dmarket.com%2Fhc%2Fen%2Dus%2Fsections%2F25122832532241%2DTrading%2DAPI&amp;rut=a28d4470ccae4c702e774ba49863db8cc3422b160d0bba499cb492be42bc9e80">Trading API - DMarket Help Center</a>
+                      </h2>
+
+                    
+
+                    
+                      <div class="result__extras">
+                        <div class="result__extras__url">
+                          <span class="result__icon">
+                            <a rel="nofollow" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsupport.dmarket.com%2Fhc%2Fen%2Dus%2Fsections%2F25122832532241%2DTrading%2DAPI&amp;rut=a28d4470ccae4c702e774ba49863db8cc3422b160d0bba499cb492be42bc9e80">
+                              <img class="result__icon__img" width="16" height="16" alt="" src="//external-content.duckduckgo.com/ip3/support.dmarket.com.ico" name="i15" />
+                            </a>
+                          </span>
+                          <a class="result__url" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsupport.dmarket.com%2Fhc%2Fen%2Dus%2Fsections%2F25122832532241%2DTrading%2DAPI&amp;rut=a28d4470ccae4c702e774ba49863db8cc3422b160d0bba499cb492be42bc9e80">
+                            support.dmarket.com/hc/en-us/sections/25122832532241-Trading-API
+                          </a>
+                          
+                        </div>
+                      </div>
+                    
+
+                    
+                      
+                        <a class="result__snippet" href="//duckduckgo.com/l/?uddg=https%3A%2F%2Fsupport.dmarket.com%2Fhc%2Fen%2Dus%2Fsections%2F25122832532241%2DTrading%2DAPI&amp;rut=a28d4470ccae4c702e774ba49863db8cc3422b160d0bba499cb492be42bc9e80">Trading <b>API</b> What is Trading <b>API</b> How to start using Trading <b>API</b> Where to find the Trading <b>API</b> <b>documentation</b> How to remove <b>API</b> keys How to re-generate Trading <b>API</b> keys What are the rate limits for requests?</a>
+                      
+                    
+
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              
+            
+
+            
+              
+              
+                <div class="nav-link">
+                  <form action="/html/" method="post">
+                    <input type="submit" class='btn btn--alt' value="Next" />
+                    <input type="hidden" name="q" value="dmarket api documentation" />
+                    <input type="hidden" name="s" value="10" />
+                    <input type="hidden" name="nextParams" value="" />
+                    <input type="hidden" name="v" value="l" />
+                    <input type="hidden" name="o" value="json" />
+                    <input type="hidden" name="dc" value="11" />
+                    <input type="hidden" name="api" value="d.js" />
+                    <input type="hidden" name="vqd" value="4-181830173801498580080727250470429253965" />
+
+                    
+                    
+                    
+                      <input name="kl" value="wt-wt" type="hidden" />
+                    
+                    
+                    
+                    
+                  </form>
+                </div>
+              
+            
+
+            <div class="feedback-btn">
+              <a rel="nofollow" href="//duckduckgo.com/feedback.html" target="_new">Feedback</a>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div> <!-- links wrapper //-->
+    
+  </div>
+
+  <div id="bottom_spacing2"></div>
+
+  
+    <img src="//duckduckgo.com/t/sl_h"/>
+  
+</body>
+</html>

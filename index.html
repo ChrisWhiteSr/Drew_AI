@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Arbitrage - Find Hidden Profits in Your Steam Inventory</title>
+    <meta name="description" content="Compare prices across multiple marketplaces and discover where to sell your CS2 & Dota2 items for maximum profit. No login required.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-brand">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Steam Arbitrage</span>
+                </div>
+                <span class="beta-badge">BETA</span>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#data-sources" class="nav-link">Data Sources</a>
+                <button class="btn btn-primary">Get Started</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Find Hidden Profits in Your <span class="gradient-text">Steam Inventory</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Compare prices across multiple marketplaces and discover where to sell your CS2 & Dota2 items for maximum profit. No login required.
+                </p>
+                
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-icon">🔒</span>
+                        <span>Public data only</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">⚡</span>
+                        <span>Instant analysis</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">📱</span>
+                        <span>Share on TikTok</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-form">
+                <div class="form-card">
+                    <h3 class="form-title">Start Your Free Analysis</h3>
+                    <p class="form-subtitle">Enter your SteamID to discover hidden profits</p>
+                    
+                    <form class="steamid-form" id="steamid-form">
+                        <div class="form-group">
+                            <label for="steamid">Steam ID or Profile URL</label>
+                            <input 
+                                type="text" 
+                                id="steamid" 
+                                placeholder="76561198000000000 or steamcommunity.com/id/username"
+                                class="form-input"
+                                required
+                            />
+                            <div class="input-help">
+                                <span class="help-link" onclick="showSteamIDHelp()">How do I find my Steam ID?</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="game">Game</label>
+                            <select id="game" class="form-select">
+                                <option value="730">Counter-Strike 2</option>
+                                <option value="570">Dota 2</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span class="btn-icon">🔍</span>
+                            Analyze My Inventory
+                        </button>
+                    </form>
+                    
+                    <div class="privacy-note">
+                        <span class="privacy-icon">🛡️</span>
+                        <span>We only access public inventory data. No login or personal information required.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Section (Hidden by default) -->
+    <section class="loading-section" id="loading-section" style="display: none;">
+        <div class="container">
+            <div class="loading-card">
+                <div class="loading-animation">
+                    <div class="loading-spinner"></div>
+                </div>
+                <h3 class="loading-title">Analyzing Your Inventory...</h3>
+                <p class="loading-subtitle">Fetching data from Steam and comparing prices across marketplaces</p>
+                
+                <div class="loading-steps">
+                    <div class="loading-step active">
+                        <span class="step-icon">📦</span>
+                        <span>Fetching inventory items</span>
+                    </div>
+                    <div class="loading-step">
+                        <span class="step-icon">💰</span>
+                        <span>Comparing marketplace prices</span>
+                    </div>
+                    <div class="loading-step">
+                        <span class="step-icon">📊</span>
+                        <span>Calculating profit opportunities</span>
+                    </div>
+                </div>
+                
+                <div class="loading-tip">
+                    <h4>💡 Did you know?</h4>
+                    <p>Most Steam users are missing out on 15-30% extra value by not comparing marketplace prices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section (Hidden by default) -->
+    <section class="results-section" id="results-section" style="display: none;">
+        <div class="container">
+            <!-- Profit Summary -->
+            <div class="profit-summary">
+                <div class="summary-card">
+                    <h2 class="summary-title">Your Profit Opportunities</h2>
+                    <div class="summary-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="total-profit">$247.50</div>
+                            <div class="stat-label">Total Potential Profit</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="items-analyzed">127</div>
+                            <div class="stat-label">Items Analyzed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="profitable-items">23</div>
+                            <div class="stat-label">Profitable Items</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tiktok-share">
+                        <button class="btn btn-tiktok" onclick="generateTikTokShare()">
+                            <span class="btn-icon">📱</span>
+                            Share Your Profits on TikTok
+                        </button>
+                        <span class="share-hint">Show your friends how much your inventory is really worth!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketplace Comparison Table -->
+            <div class="marketplace-table">
+                <div class="table-header">
+                    <h3>Best Selling Opportunities</h3>
+                    <div class="table-filters">
+                        <button class="filter-btn active" data-filter="all">All Items</button>
+                        <button class="filter-btn" data-filter="profitable">Profitable Only</button>
+                        <button class="filter-btn" data-filter="high-value">High Value</button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Steam Price</th>
+                                <th>Best Market</th>
+                                <th>Market Price</th>
+                                <th>Profit</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-table-body">
+                            <!-- Sample data - will be replaced with real data -->
+                            <tr class="table-row profitable" data-profit="24.50">
+                                <td class="item-cell">
+                                    <div class="item-info">
+                                        <div class="item-icon covert">AK</div>
+                                        <div>
+                                            <div class="item-name">AK-47 | Redline</div>
+                                            <div class="item-details">Field-Tested, StatTrak™</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="price-cell">$156.50</td>
+                                <td class="market-cell">
+                                    <div class="market-badge skinport">Skinport</div>
+                                </td>
+                                <td class="price-cell">$181.00</td>
+                                <td class="profit-cell">
+                                    <div class="profit-positive">+$24.50</div>
+                                    <div class="profit-percentage">+15.6%</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="btn btn-primary btn-sm" onclick="window.open('https://skinport.com', '_blank')">Sell Here</button>
+                                    <button class="btn btn-ghost btn-sm" onclick="showItemDetails('ak47-redline')">Details</button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row profitable" data-profit="18.75">
+                                <td class="item-cell">
+                                    <div class="item-info">
+                                        <div class="item-icon classified">M4</div>
+                                        <div>
+                                            <div class="item-name">M4A4 | Asiimov</div>
+                                            <div class="item-details">Battle-Scarred</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="price-cell">$89.25</td>
+                                <td class="market-cell">
+                                    <div class="market-badge dmarket">DMarket</div>
+                                </td>
+                                <td class="price-cell">$108.00</td>
+                                <td class="profit-cell">
+                                    <div class="profit-positive">+$18.75</div>
+                                    <div class="profit-percentage">+21.0%</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="btn btn-primary btn-sm" onclick="window.open('https://dmarket.com', '_blank')">Sell Here</button>
+                                    <button class="btn btn-ghost btn-sm" onclick="showItemDetails('m4a4-asiimov')">Details</button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row profitable" data-profit="15.20">
+                                <td class="item-cell">
+                                    <div class="item-info">
+                                        <div class="item-icon restricted">AWP</div>
+                                        <div>
+                                            <div class="item-name">AWP | Electric Hive</div>
+                                            <div class="item-details">Minimal Wear</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="price-cell">$67.80</td>
+                                <td class="market-cell">
+                                    <div class="market-badge skinport">Skinport</div>
+                                </td>
+                                <td class="price-cell">$83.00</td>
+                                <td class="profit-cell">
+                                    <div class="profit-positive">+$15.20</div>
+                                    <div class="profit-percentage">+22.4%</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="btn btn-primary btn-sm" onclick="window.open('https://skinport.com', '_blank')">Sell Here</button>
+                                    <button class="btn btn-ghost btn-sm" onclick="showItemDetails('awp-electric-hive')">Details</button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row" data-profit="-2.30">
+                                <td class="item-cell">
+                                    <div class="item-info">
+                                        <div class="item-icon milspec">GLK</div>
+                                        <div>
+                                            <div class="item-name">Glock-18 | Water Elemental</div>
+                                            <div class="item-details">Well-Worn</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="price-cell">$23.45</td>
+                                <td class="market-cell">
+                                    <div class="market-badge steam">Steam Market</div>
+                                </td>
+                                <td class="price-cell">$21.15</td>
+                                <td class="profit-cell">
+                                    <div class="profit-negative">-$2.30</div>
+                                    <div class="profit-percentage">-9.8%</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="btn btn-secondary btn-sm disabled">Keep on Steam</button>
+                                </td>
+                            </tr>
+                            
+                            <tr class="table-row profitable" data-profit="8.90">
+                                <td class="item-cell">
+                                    <div class="item-info">
+                                        <div class="item-icon restricted">USP</div>
+                                        <div>
+                                            <div class="item-name">USP-S | Kill Confirmed</div>
+                                            <div class="item-details">Field-Tested</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="price-cell">$45.60</td>
+                                <td class="market-cell">
+                                    <div class="market-badge dmarket">DMarket</div>
+                                </td>
+                                <td class="price-cell">$54.50</td>
+                                <td class="profit-cell">
+                                    <div class="profit-positive">+$8.90</div>
+                                    <div class="profit-percentage">+19.5%</div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="btn btn-primary btn-sm" onclick="window.open('https://dmarket.com', '_blank')">Sell Here</button>
+                                    <button class="btn btn-ghost btn-sm" onclick="showItemDetails('usp-kill-confirmed')">Details</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Upgrade CTA -->
+            <div class="upgrade-cta">
+                <div class="cta-card">
+                    <h3>Want Real-Time Monitoring?</h3>
+                    <p>Get alerts when your items become profitable across all marketplaces. Track price changes and never miss an opportunity.</p>
+                    <div class="cta-features">
+                        <div class="feature-item">📊 Real-time price tracking</div>
+                        <div class="feature-item">🔔 Profit opportunity alerts</div>
+                        <div class="feature-item">📈 Historical price charts</div>
+                        <div class="feature-item">⚡ Priority analysis queue</div>
+                    </div>
+                    <button class="btn btn-primary btn-large">Upgrade to Pro - $4/month</button>
+                    <div class="cta-note">Join 10,000+ traders maximizing their Steam inventory value</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Steam Arbitrage Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Enter Your Steam ID</h3>
+                    <p>Simply paste your Steam ID or profile URL. We only access public inventory data - no login required.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Scan Marketplaces</h3>
+                    <p>Our system compares prices across Skinport, DMarket, and other trusted marketplaces in real-time.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Discover Hidden Profits</h3>
+                    <p>See exactly which items to sell where for maximum profit, including fees and withdrawal costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Sources Section -->
+    <section class="data-sources" id="data-sources">
+        <div class="container">
+            <h2 class="section-title">Data Sources & Transparency</h2>
+            <p class="section-subtitle">We believe in complete transparency about our data sources and methodology.</p>
+            
+            <div class="sources-grid">
+                <div class="source-card">
+                    <h3>Steam Community Market</h3>
+                    <p>Official Steam marketplace data via public APIs. Real-time pricing for all CS2 and Dota2 items.</p>
+                    <a href="https://steamcommunity.com/market/" class="source-link">View Steam Market →</a>
+                </div>
+                <div class="source-card">
+                    <h3>Skinport</h3>
+                    <p>Professional CS2 skin marketplace with competitive pricing and fast transactions.</p>
+                    <a href="https://skinport.com" class="source-link">View Skinport →</a>
+                </div>
+                <div class="source-card">
+                    <h3>DMarket</h3>
+                    <p>Global gaming marketplace supporting multiple games with secure trading infrastructure.</p>
+                    <a href="https://dmarket.com" class="source-link">View DMarket →</a>
+                </div>
+            </div>
+            
+            <div class="methodology">
+                <h3>Our Methodology</h3>
+                <ul>
+                    <li>Real-time price fetching from official APIs</li>
+                    <li>Transparent fee calculations including marketplace commissions</li>
+                    <li>Currency conversion using live exchange rates</li>
+                    <li>No hidden fees or inflated profit estimates</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">Steam Arbitrage</span>
+                    </div>
+                    <p>Find hidden profits in your Steam inventory</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#data-sources">Data Sources</a>
+                        <a href="#pricing">Pricing</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#disclaimer">Disclaimer</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#faq">FAQ</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#discord">Discord</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Steam Arbitrage. Not affiliated with Valve Corporation.</p>
+                <div class="footer-disclaimer">
+                    <p>Steam and the Steam logo are trademarks of Valve Corporation. CS2 and Dota2 are registered trademarks of Valve Corporation.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TikTok Share Modal (Hidden by default) -->
+    <div class="modal-overlay" id="tiktok-modal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Share Your Profits on TikTok</h3>
+                <button class="modal-close" onclick="closeTikTokModal()">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="share-preview">
+                    <div class="share-card">
+                        <div class="share-header">
+                            <div class="share-logo">⚡ Steam Arbitrage</div>
+                            <div class="share-stat">Found $247.50 profit!</div>
+                        </div>
+                        
+                        <div class="share-items">
+                            <div class="share-item">
+                                <div class="share-item-icon covert">AK</div>
+                                <span class="share-item-profit">+$24.50</span>
+                            </div>
+                            <div class="share-item">
+                                <div class="share-item-icon classified">M4</div>
+                                <span class="share-item-profit">+$18.75</span>
+                            </div>
+                            <div class="share-item">
+                                <div class="share-item-icon restricted">AWP</div>
+                                <span class="share-item-profit">+$15.20</span>
+                            </div>
+                        </div>
+                        
+                        <div class="share-cta">
+                            <span>Find YOUR hidden profits at steam-arbitrage.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="share-actions">
+                    <button class="btn btn-tiktok btn-large" onclick="copyShareText()">
+                        <span class="btn-icon">📱</span>
+                        Copy Share Text
+                    </button>
+                    <button class="btn btn-secondary" onclick="downloadShareImage()">Download Image</button>
+                </div>
+                
+                <div class="share-text">
+                    <h4>Suggested Caption:</h4>
+                    <p id="share-caption">"Just found $247.50 hidden in my Steam inventory 😳 Who else is missing out on this? #steamtrading #cs2 #gaming #profit"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
